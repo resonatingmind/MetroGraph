@@ -1,0 +1,24 @@
+# Fictional six-station network used by the tests and the CLI smoke test.
+# The slow direct Green segment makes fewest-stops (North -> South) differ from fastest.
+metrograph	1
+L	0	#FF4040	Red Line
+L	1	#4169E1	Blue Line
+L	2	#008000	Green Line
+S	0	10.0200000	10.0000000	North
+S	1	10.0000000	10.0000000	Central
+S	2	9.9800000	10.0000000	South
+S	3	10.0000000	9.9800000	West
+S	4	10.0000000	10.0200000	East
+S	5	10.0000000	10.0400000	Harbour
+E	0	1	0	120
+E	1	0	0	120
+E	1	2	0	120
+E	2	1	0	120
+E	3	1	1	90
+E	1	3	1	90
+E	1	4	1	90
+E	4	1	1	90
+E	4	5	1	100
+E	5	4	1	100
+E	0	2	2	600
+E	2	0	2	600

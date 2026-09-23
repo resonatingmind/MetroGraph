@@ -1,0 +1,15 @@
+# Build output
+/build/
+/out/
+
+# Editor / IDE state
+/.vs/
+/.vscode/*
+!/.vscode/extensions.json
+*.user
+
+# Runtime history written by the console app
+metrograph_history.tsv
+
+# Private planning notes (CV drafts) - not for the public repo
+MetroGraph_Build_Spec.pdf
