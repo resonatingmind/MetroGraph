@@ -58,6 +58,16 @@ void Network::add_segment(StationId from, StationId to, LineId line, std::uint32
     segments_.push_back(Segment{from, to, line, seconds});
 }
 
+void Network::add_walkway(StationId a, StationId b, std::uint32_t seconds) {
+    if (a >= stations_.size() || b >= stations_.size()) {
+        throw std::out_of_range("walkway references an unknown station");
+    }
+    if (a == b) {
+        throw std::invalid_argument("walkway must join two different stations");
+    }
+    walkways_.push_back(Walkway{a, b, seconds});
+}
+
 const Station* Network::station(StationId id) const noexcept {
     return id < stations_.size() ? &stations_[id] : nullptr;
 }
@@ -169,6 +179,11 @@ Network load_network(std::istream& in) {
                                     parse_number<StationId>(fields[2], line_no, "station id"),
                                     parse_number<LineId>(fields[3], line_no, "line id"),
                                     parse_number<std::uint32_t>(fields[4], line_no, "duration"));
+            } else if (kind == "W") {
+                expect_fields(fields, 4, line_no);
+                network.add_walkway(parse_number<StationId>(fields[1], line_no, "station id"),
+                                    parse_number<StationId>(fields[2], line_no, "station id"),
+                                    parse_number<std::uint32_t>(fields[3], line_no, "duration"));
             } else {
                 throw ParseError(line_no, "unknown record type '" + std::string(kind) + "'");
             }
@@ -212,6 +227,9 @@ void save_network(const Network& network, std::ostream& out) {
     }
     for (const Segment& e : network.segments()) {
         buf << "E\t" << e.from << '\t' << e.to << '\t' << e.line << '\t' << e.seconds << '\n';
+    }
+    for (const Walkway& w : network.walkways()) {
+        buf << "W\t" << w.a << '\t' << w.b << '\t' << w.seconds << '\n';
     }
     out << buf.str();
 }

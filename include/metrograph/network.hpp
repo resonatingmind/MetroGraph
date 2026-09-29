@@ -3,6 +3,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <iosfwd>
+#include <limits>
 #include <optional>
 #include <stdexcept>
 #include <string>
@@ -14,6 +15,9 @@ namespace metrograph {
 // Ids are dense indices: the n-th station added has id n.
 using StationId = std::uint32_t;
 using LineId = std::uint32_t;
+
+// Pseudo line id carried by graph edges and route steps that are walks between stations.
+inline constexpr LineId kWalkway = std::numeric_limits<LineId>::max();
 
 struct Station {
     StationId id = 0;
@@ -36,6 +40,14 @@ struct Segment {
     std::uint32_t seconds = 0;
 };
 
+// A walking connection between two separately named stations (e.g. a skywalk between lines).
+// Walkways are two-way.
+struct Walkway {
+    StationId a = 0;
+    StationId b = 0;
+    std::uint32_t seconds = 0;
+};
+
 // The transit network as data: stations, lines and the segments joining them.
 // Routing graphs are built from this (see graph.hpp); the network itself knows nothing about algorithms.
 class Network {
@@ -43,10 +55,12 @@ public:
     StationId add_station(std::string name, double lat, double lon);
     LineId add_line(std::string name, std::string colour);
     void add_segment(StationId from, StationId to, LineId line, std::uint32_t seconds);
+    void add_walkway(StationId a, StationId b, std::uint32_t seconds);
 
     const std::vector<Station>& stations() const noexcept { return stations_; }
     const std::vector<Line>& lines() const noexcept { return lines_; }
     const std::vector<Segment>& segments() const noexcept { return segments_; }
+    const std::vector<Walkway>& walkways() const noexcept { return walkways_; }
 
     // nullptr when the id is out of range.
     const Station* station(StationId id) const noexcept;
@@ -62,6 +76,7 @@ private:
     std::vector<std::string> lowered_names_;
     std::vector<Line> lines_;
     std::vector<Segment> segments_;
+    std::vector<Walkway> walkways_;
 };
 
 class ParseError : public std::runtime_error {
@@ -78,6 +93,7 @@ private:
 //   L <TAB> id <TAB> colour <TAB> name
 //   S <TAB> id <TAB> lat <TAB> lon <TAB> name
 //   E <TAB> from <TAB> to <TAB> line <TAB> seconds
+//   W <TAB> station <TAB> station <TAB> seconds          (two-way walkway)
 // Ids must be dense and in order. Blank lines and lines starting with '#' are ignored.
 Network load_network(std::istream& in);
 Network load_network_file(const std::string& path);

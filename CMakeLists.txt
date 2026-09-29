@@ -7,6 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(METROGRAPH_BUILD_TESTS "Build the unit tests" ON)
+option(METROGRAPH_BUILD_IMPORTER "Build the OpenStreetMap importer (needs nlohmann/json, fetched)" ON)
 option(METROGRAPH_SANITIZE "Build everything with AddressSanitizer + UndefinedBehaviorSanitizer" OFF)
 option(METROGRAPH_WERROR "Treat compiler warnings as errors (used in CI)" OFF)
 
@@ -54,6 +55,34 @@ add_executable(metrograph
     app/main.cpp
 )
 target_link_libraries(metrograph PRIVATE metrograph_core metrograph_warnings)
+
+# ---- OpenStreetMap importer -----------------------------------------------
+# Kept out of metrograph_core so the engine (and later the WebAssembly build) has no JSON dependency.
+if(METROGRAPH_BUILD_IMPORTER)
+    include(FetchContent)
+    FetchContent_Declare(
+        nlohmann_json
+        URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz
+        URL_HASH SHA256=d6c65aca6b1ed68e7a182f4757257b107ae403032760ed6ef121c9d55e81757d
+        SYSTEM
+    )
+    FetchContent_MakeAvailable(nlohmann_json)
+
+    add_library(metrograph_osm STATIC src/osm/osm_import.cpp)
+    target_link_libraries(metrograph_osm PUBLIC metrograph_core PRIVATE nlohmann_json::nlohmann_json metrograph_warnings)
+
+    add_executable(metrograph_import tools/import_osm.cpp)
+    target_link_libraries(metrograph_import PRIVATE metrograph_osm metrograph_warnings)
+
+    # `cmake --build <dir> --target import-delhi` regenerates the committed Delhi network.
+    add_custom_target(import-delhi
+        # Relative paths: they are recorded in the file header, which must not depend on the machine.
+        COMMAND metrograph_import data/raw/delhi_overpass.json data/delhi_import.tsv data/delhi.graph
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        COMMENT "Regenerating data/delhi.graph from the OpenStreetMap extract"
+        VERBATIM
+    )
+endif()
 
 # ---- tests ----------------------------------------------------------------
 if(METROGRAPH_BUILD_TESTS)

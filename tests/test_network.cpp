@@ -1,10 +1,12 @@
 #include <catch2/catch_approx.hpp>
 #include <catch2/catch_test_macros.hpp>
 
+#include <algorithm>
 #include <sstream>
 #include <stdexcept>
 #include <string>
 
+#include "metrograph/graph.hpp"
 #include "metrograph/network.hpp"
 
 using namespace metrograph;
@@ -84,6 +86,30 @@ TEST_CASE("save then load round-trips", "[network][io]") {
     }
     CHECK(loaded.lines()[0].name == "Yellow Line");
     CHECK(loaded.segments()[0].seconds == 110);
+}
+
+TEST_CASE("walkways round-trip and become two-way graph edges", "[network][io]") {
+    Network n = sample();
+    n.add_walkway(0, 2, 240);
+    CHECK_THROWS_AS(n.add_walkway(0, 0, 60), std::invalid_argument);
+    CHECK_THROWS_AS(n.add_walkway(0, 9, 60), std::out_of_range);
+
+    std::stringstream buf;
+    save_network(n, buf);
+    const Network loaded = load_network(buf);
+    REQUIRE(loaded.walkways().size() == 1);
+    CHECK(loaded.walkways()[0].b == 2);
+    CHECK(loaded.walkways()[0].seconds == 240);
+
+    const Graph g = Graph::from_network(loaded);
+    CHECK(g.edge_count() == loaded.segments().size() + 2);
+    const auto has_walk = [&](NodeId from, NodeId to) {
+        const auto& edges = g.neighbours(from);
+        return std::any_of(edges.begin(), edges.end(),
+                           [&](const Edge& e) { return e.to == to && e.line == kWalkway && e.seconds == 240; });
+    };
+    CHECK(has_walk(0, 2));
+    CHECK(has_walk(2, 0));
 }
 
 TEST_CASE("loader tolerates comments, blank lines and CRLF", "[network][io]") {

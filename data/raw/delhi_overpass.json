@@ -2,7 +2,7 @@
   "version": 0.6,
   "generator": "Overpass API 0.7.62.11 87bfad18",
   "osm3s": {
-    "timestamp_osm_base": "2026-07-15T15:22:01Z",
+    "timestamp_osm_base": "2026-09-28T22:27:31Z",
     "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
   },
   "elements": [
@@ -4429,11 +4429,6 @@
       "type": "way",
       "ref": 1184476775,
       "role": ""
-    },
-    {
-      "type": "node",
-      "ref": 13979955696,
-      "role": "route_marker"
     }
   ],
   "tags": {
@@ -4928,6 +4923,393 @@
     "type": "route",
     "wikidata": "Q19893471",
     "wikipedia": "en:Magenta Line (Delhi Metro)"
+  }
+},
+{
+  "type": "relation",
+  "id": 9268568,
+  "members": [
+    {
+      "type": "node",
+      "ref": 5777613712,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613710,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613706,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613702,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613688,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613685,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613662,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613652,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613645,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613636,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613630,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613624,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613618,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613604,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613593,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613583,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613567,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613556,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613345,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5777613343,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914485,
+      "role": "stop"
+    },
+    {
+      "type": "way",
+      "ref": 1183338335,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1183338336,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1466105447,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1466105449,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 610023996,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1180683914,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1490163904,
+      "role": ""
+    }
+  ],
+  "tags": {
+    "colour": "aqua",
+    "from": "Depot",
+    "name": "Aqua Line: Depot → Noida Sector 51",
+    "network": "Noida Metro",
+    "network:wikidata": "Q16909221",
+    "operator": "NMRC",
+    "public_transport:version": "2",
+    "ref": "Aqua Line",
+    "route": "subway",
+    "to": "Noida Sector 51",
+    "type": "route",
+    "wikidata": "Q41668068",
+    "wikipedia": "en:Aqua Line (Noida Metro)"
+  }
+},
+{
+  "type": "relation",
+  "id": 9268569,
+  "members": [
+    {
+      "type": "node",
+      "ref": 10074914484,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 4950923221,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914483,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914482,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914481,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914480,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914479,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914478,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914477,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914476,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914475,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914474,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914473,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914472,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914471,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 4849443433,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914470,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914469,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914468,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914467,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 10074914466,
+      "role": "stop"
+    },
+    {
+      "type": "way",
+      "ref": 687733478,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733479,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733480,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733481,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733482,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733483,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733484,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733485,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1466105448,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1466105450,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733486,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733487,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733488,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733489,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733491,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733492,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733493,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733494,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 687733495,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 688068784,
+      "role": ""
+    }
+  ],
+  "tags": {
+    "colour": "aqua",
+    "from": "Noida Sector 51",
+    "name": "Aqua Line: Noida Sector 51 → Depot",
+    "network": "Noida Metro",
+    "network:wikidata": "Q16909221",
+    "operator": "NMRC",
+    "public_transport:version": "2",
+    "ref": "Aqua Line",
+    "route": "subway",
+    "to": "Depot",
+    "type": "route",
+    "wikidata": "Q41668068",
+    "wikipedia": "en:Aqua Line (Noida Metro)"
   }
 },
 {
@@ -5886,6 +6268,7 @@
     "note": "Contributors are requested to not edit the \"network\" and the \"operator\" tags. (2023/06/23)",
     "operator": "Delhi Metro Rail Corporation Limited",
     "public_transport": "stop_position",
+    "railway": "stop",
     "subway": "yes"
   }
 },
@@ -7069,6 +7452,7 @@
     "operator": "Haryana Mass Rapid Transport Corporation Limited",
     "public_transport": "stop_position",
     "railway": "station",
+    "ref": "MAL",
     "station": "subway",
     "subway": "yes",
     "wheelchair": "yes"
@@ -7087,6 +7471,7 @@
     "operator": "Haryana Mass Rapid Transport Corporation Limited",
     "public_transport": "stop_position",
     "railway": "station",
+    "ref": "DL3",
     "start_date": "2013-11-14",
     "station": "subway",
     "subway": "yes",
@@ -8066,6 +8451,36 @@
 },
 {
   "type": "node",
+  "id": 4849443433,
+  "lat": 28.4570728,
+  "lon": 77.5002978,
+  "tags": {
+    "name": "Knowledge Park II",
+    "name:hi": "नॉलेज पार्क II",
+    "network": "Noida Metro",
+    "operator": "Noida Metro Rail Corporation",
+    "public_transport": "stop_position",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4950923221,
+  "lat": 28.5743612,
+  "lon": 77.3782577,
+  "tags": {
+    "alt_name": "Noida Sector 50",
+    "name": "Rainbow Metro Station",
+    "name:hi": "नोएडा सेक्टर ५०",
+    "network": "NMRC",
+    "platforms": "2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
   "id": 5066137686,
   "lat": 28.6892109,
   "lon": 76.9511612,
@@ -8172,6 +8587,7 @@
   "lon": 77.0867100,
   "tags": {
     "name": "IGI Airport",
+    "name:en": "IGI Airport",
     "name:hi": "आई.जी.आई एयरपोर्ट",
     "network": "Delhi Metro",
     "network:wikidata": "Q271195",
@@ -9657,6 +10073,253 @@
     "railway": "stop",
     "ref": "AIIMS",
     "short_name": "AIIMS",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613343,
+  "lat": 28.5743471,
+  "lon": 77.3782123,
+  "tags": {
+    "alt_name": "Noida Sector 50",
+    "name": "Rainbow Metro Station",
+    "name:hi": "नोएडा सेक्टर ५०",
+    "network": "NMRC",
+    "platforms": "2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613345,
+  "lat": 28.5653301,
+  "lon": 77.3796268,
+  "tags": {
+    "name": "Noida Sector 76",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613556,
+  "lat": 28.5560412,
+  "lon": 77.3849173,
+  "tags": {
+    "name": "Noida Sector 101",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613567,
+  "lat": 28.5492880,
+  "lon": 77.3899106,
+  "tags": {
+    "name": "Noida Sector 81",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613583,
+  "lat": 28.5324104,
+  "lon": 77.3947219,
+  "tags": {
+    "name": "NSEZ",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613593,
+  "lat": 28.5222584,
+  "lon": 77.3964141,
+  "tags": {
+    "name": "Noida Sector 83",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613604,
+  "lat": 28.5107596,
+  "lon": 77.4035768,
+  "tags": {
+    "name": "Noida Sector 137",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613618,
+  "lat": 28.4989702,
+  "lon": 77.4128457,
+  "tags": {
+    "name": "Noida Sector 142",
+    "operator": "NMRC",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613624,
+  "lat": 28.4942406,
+  "lon": 77.4223517,
+  "tags": {
+    "name": "Noida Sector 143",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613630,
+  "lat": 28.4862727,
+  "lon": 77.4330482,
+  "tags": {
+    "name": "Noida Sector 144",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613636,
+  "lat": 28.4789843,
+  "lon": 77.4423795,
+  "tags": {
+    "name": "Noida Sector 145",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613645,
+  "lat": 28.4688210,
+  "lon": 77.4551517,
+  "tags": {
+    "name": "Noida Sector 146",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613652,
+  "lat": 28.4592936,
+  "lon": 77.4661547,
+  "tags": {
+    "name": "Noida Sector 147",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613662,
+  "lat": 28.4480499,
+  "lon": 77.4765713,
+  "tags": {
+    "name": "Noida Sector 148",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613685,
+  "lat": 28.4570311,
+  "lon": 77.5003351,
+  "tags": {
+    "name": "Knowledge Park II",
+    "name:hi": "नॉलेज पार्क II",
+    "network": "Noida Metro",
+    "operator": "Noida Metro Rail Corporation",
+    "public_transport": "stop_position",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613688,
+  "lat": 28.4633782,
+  "lon": 77.5083695,
+  "tags": {
+    "name": "Pari Chowk",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613702,
+  "lat": 28.4710050,
+  "lon": 77.5127411,
+  "tags": {
+    "name": "Alpha 1",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613706,
+  "lat": 28.4784458,
+  "lon": 77.5257269,
+  "tags": {
+    "name": "Delta 1",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613710,
+  "lat": 28.4846562,
+  "lon": 77.5365134,
+  "tags": {
+    "name": "GNIDA Office",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5777613712,
+  "lat": 28.4889850,
+  "lon": 77.5440143,
+  "tags": {
+    "name": "Depot Station",
+    "public_transport": "stop_position",
+    "railway": "stop",
     "subway": "yes"
   }
 },
@@ -13668,6 +14331,247 @@
 },
 {
   "type": "node",
+  "id": 10074914466,
+  "lat": 28.4890297,
+  "lon": 77.5439804,
+  "tags": {
+    "name": "Depot Station",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914467,
+  "lat": 28.4847012,
+  "lon": 77.5364801,
+  "tags": {
+    "name": "GNIDA Office",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914468,
+  "lat": 28.4784907,
+  "lon": 77.5256933,
+  "tags": {
+    "name": "Delta 1",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914469,
+  "lat": 28.4710499,
+  "lon": 77.5127076,
+  "tags": {
+    "name": "Alpha 1",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914470,
+  "lat": 28.4634141,
+  "lon": 77.5083353,
+  "tags": {
+    "name": "Pari Chowk",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914471,
+  "lat": 28.4480792,
+  "lon": 77.4766226,
+  "tags": {
+    "name": "Noida Sector 148",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914472,
+  "lat": 28.4593419,
+  "lon": 77.4662076,
+  "tags": {
+    "name": "Noida Sector 147",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914473,
+  "lat": 28.4688753,
+  "lon": 77.4551892,
+  "tags": {
+    "name": "Noida Sector 146",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914474,
+  "lat": 28.4790219,
+  "lon": 77.4424232,
+  "tags": {
+    "name": "Noida Sector 145",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914475,
+  "lat": 28.4863132,
+  "lon": 77.4330884,
+  "tags": {
+    "name": "Noida Sector 144",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914476,
+  "lat": 28.4942812,
+  "lon": 77.4223917,
+  "tags": {
+    "name": "Noida Sector 143",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914477,
+  "lat": 28.4990137,
+  "lon": 77.4128680,
+  "tags": {
+    "name": "Noida Sector 142",
+    "operator": "NMRC",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914478,
+  "lat": 28.5107876,
+  "lon": 77.4036289,
+  "tags": {
+    "name": "Noida Sector 137",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914479,
+  "lat": 28.5222947,
+  "lon": 77.3964592,
+  "tags": {
+    "name": "Noida Sector 83",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914480,
+  "lat": 28.5324158,
+  "lon": 77.3947827,
+  "tags": {
+    "name": "NSEZ",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914481,
+  "lat": 28.5493098,
+  "lon": 77.3899644,
+  "tags": {
+    "name": "Noida Sector 81",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914482,
+  "lat": 28.5560682,
+  "lon": 77.3849701,
+  "tags": {
+    "name": "Noida Sector 101",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914483,
+  "lat": 28.5653399,
+  "lon": 77.3796863,
+  "tags": {
+    "name": "Noida Sector 76",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914484,
+  "lat": 28.5857254,
+  "lon": 77.3752792,
+  "tags": {
+    "name": "Noida Sector 51",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10074914485,
+  "lat": 28.5857163,
+  "lon": 77.3752397,
+  "tags": {
+    "name": "Noida Sector 51",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
   "id": 12390111350,
   "lat": 28.6980748,
   "lon": 77.1182847,
@@ -14148,22 +15052,6 @@
     "public_transport": "stop_position",
     "railway": "stop",
     "subway": "yes"
-  }
-},
-{
-  "type": "node",
-  "id": 13979955696,
-  "lat": 28.7009190,
-  "lon": 77.2617469,
-  "tags": {
-    "addr:city": "Bhajanpura, Delhi",
-    "addr:country": "IN",
-    "addr:housenumber": "C-224/A",
-    "addr:postcode": "110053",
-    "addr:street": "Street No-10",
-    "name": "Government e Marketplace Consultancy Service India",
-    "office": "consulting",
-    "source": "Technicals"
   }
 }
 

@@ -9,15 +9,39 @@ namespace metrograph::app {
 
 namespace {
 
-// Pads or truncates to exactly `width` characters (bytes; station names here are ASCII).
-std::string fit(const std::string& s, std::size_t width) {
-    if (s.size() > width) {
-        return width > 3 ? s.substr(0, width - 3) + "..." : s.substr(0, width);
+bool is_utf8_continuation(char c) {
+    return (static_cast<unsigned char>(c) & 0xC0) == 0x80;
+}
+
+// Display width in code points; good enough for the Latin names in metro data (no wide CJK glyphs).
+std::size_t display_width(const std::string& s) {
+    return static_cast<std::size_t>(std::count_if(s.begin(), s.end(), [](char c) { return !is_utf8_continuation(c); }));
+}
+
+// Byte offset just past the first `n` code points.
+std::size_t prefix_bytes(const std::string& s, std::size_t n) {
+    std::size_t i = 0;
+    for (std::size_t seen = 0; i < s.size(); ++i) {
+        if (!is_utf8_continuation(s[i]) && seen++ == n) {
+            break;
+        }
     }
-    return s + std::string(width - s.size(), ' ');
+    return i;
+}
+
+// Pads or truncates to exactly `width` display columns without splitting a UTF-8 sequence.
+std::string fit(const std::string& s, std::size_t width) {
+    const std::size_t w = display_width(s);
+    if (w > width) {
+        return width > 3 ? s.substr(0, prefix_bytes(s, width - 3)) + "..." : s.substr(0, prefix_bytes(s, width));
+    }
+    return s + std::string(width - w, ' ');
 }
 
 std::string line_name(const Network& network, LineId id) {
+    if (id == kWalkway) {
+        return "Walk";
+    }
     const Line* line = network.line(id);
     return line ? line->name : "?";
 }
@@ -121,12 +145,18 @@ std::string format_route(const Network& network, const Route& route, QueryMode m
         leg.seconds += step.seconds;
     }
 
-    out << "  " << format_duration(route.total_seconds) << ", " << plural(route.stops(), "stop") << ", "
-        << plural(legs.size() - 1, "line change") << "\n\n";
+    // A walk between stations is part of an interchange, not a change of its own.
+    const auto train_legs = static_cast<std::size_t>(
+        std::count_if(legs.begin(), legs.end(), [](const Leg& leg) { return leg.line != kWalkway; }));
+    const std::size_t train_stops = static_cast<std::size_t>(
+        std::count_if(route.steps.begin(), route.steps.end(), [](const Step& s) { return s.line != kWalkway; }));
+    out << "  " << format_duration(route.total_seconds) << ", " << plural(train_stops, "stop") << ", "
+        << plural(train_legs > 0 ? train_legs - 1 : 0, "line change") << "\n\n";
     for (const Leg& leg : legs) {
+        const bool walk = leg.line == kWalkway;
         out << "  " << fit(line_name(network, leg.line), 22)
             << fit(station_name(network, leg.from) + " -> " + station_name(network, leg.to), 52)
-            << fit(plural(leg.stops, "stop"), 10) << format_duration(leg.seconds) << '\n';
+            << fit(walk ? "" : plural(leg.stops, "stop"), 10) << format_duration(leg.seconds) << '\n';
     }
     return out.str();
 }

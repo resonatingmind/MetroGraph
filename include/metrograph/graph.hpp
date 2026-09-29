@@ -22,7 +22,7 @@ class Graph {
 public:
     explicit Graph(std::size_t node_count = 0);
 
-    // One node per station, one edge per segment.
+    // One node per station, one edge per segment, two edges (line kWalkway) per walkway.
     static Graph from_network(const Network& network);
 
     void add_edge(NodeId from, NodeId to, std::uint32_t seconds, LineId line);

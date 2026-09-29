@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <charconv>
 #include <chrono>
+#include <cstddef>
 #include <iostream>
 #include <optional>
 #include <string>
@@ -72,6 +73,7 @@ int cmd_stats(const Network& network, const Graph& graph) {
     std::cout << "Stations:     " << network.stations().size() << '\n'
               << "Lines:        " << network.lines().size() << '\n'
               << "Segments:     " << network.segments().size() << '\n'
+              << "Walkways:     " << network.walkways().size() << '\n'
               << "Graph nodes:  " << graph.node_count() << '\n'
               << "Graph edges:  " << graph.edge_count() << '\n'
               << "Interchanges: " << interchanges << " (stations served by more than one line)\n";
@@ -157,7 +159,7 @@ int main(int argc, char** argv) {
     const Graph graph = Graph::from_network(network);
 
     const std::string_view command = args.size() > 1 ? args[1] : "";
-    const std::vector<std::string_view> rest(args.begin() + std::min<std::size_t>(2, args.size()), args.end());
+    const std::vector<std::string_view> rest(args.begin() + std::min<std::ptrdiff_t>(2, static_cast<std::ptrdiff_t>(args.size())), args.end());
 
     if (command.empty() || command == "--history") {
         std::string history = kDefaultHistoryFile;

@@ -1,0 +1,26 @@
+# Settings for importing the Delhi NCR metro from data/raw/delhi_overpass.json.
+# Tab-separated. See include/metrograph/osm_import.hpp for the meaning of each key.
+
+# ---- Segment times --------------------------------------------------------------------------
+# OSM has no timetables, so every segment time is ESTIMATED as
+#     dwell_seconds + straight-line distance / speed_kmh
+# These are round-number assumptions, not measurements. They will be calibrated against the
+# official DMRC journey planner when the verification table is built.
+speed_kmh	40
+dwell_seconds	25
+# Airport Express runs faster trains with long gaps between stations.
+line_speed_kmh	Airport Express Line	70
+
+# ---- Station merging ------------------------------------------------------------------------
+# OSM maps one stop position per line and direction; same-name positions this close are one station.
+merge_radius_m	300
+
+# ---- Walkways between differently named stations -------------------------------------------
+# Only official interchanges are listed. Many other stations are within walking distance of one
+# another, but they are not signposted interchanges and are deliberately not linked.
+# Time = walk_detour * straight-line distance / walk_speed_mps unless a time is given.
+walk_speed_mps	1.2
+walk_detour	1.3
+walkway	New Delhi	New Delhi Airport Express Terminal
+walkway	Noida Sector 51	Noida Sector 52
+walkway	Dhaula Kuan	Durgabai Deshmukh South Campus

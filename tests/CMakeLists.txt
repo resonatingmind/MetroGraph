@@ -16,7 +16,14 @@ add_executable(metrograph_tests
     test_routing.cpp
 )
 target_link_libraries(metrograph_tests PRIVATE metrograph_core metrograph_warnings Catch2::Catch2WithMain)
-target_compile_definitions(metrograph_tests PRIVATE METROGRAPH_TEST_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
+target_compile_definitions(metrograph_tests PRIVATE
+    METROGRAPH_TEST_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data"
+    METROGRAPH_SOURCE_DIR="${PROJECT_SOURCE_DIR}"
+)
+if(METROGRAPH_BUILD_IMPORTER)
+    target_sources(metrograph_tests PRIVATE test_osm_import.cpp)
+    target_link_libraries(metrograph_tests PRIVATE metrograph_osm)
+endif()
 
 list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
 include(Catch)

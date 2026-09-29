@@ -1,0 +1,64 @@
+{
+  "version": 0.6,
+  "generator": "hand-written test fixture shaped like Overpass API output",
+  "elements": [
+    { "type": "relation", "id": 10, "tags": { "route": "subway", "name": "Red Line (Alpha → Gamma)", "colour": "#ff4040" },
+      "members": [
+        { "type": "node", "ref": 1, "role": "stop" },
+        { "type": "node", "ref": 901, "role": "platform" },
+        { "type": "node", "ref": 2, "role": "stop" },
+        { "type": "way", "ref": 5000, "role": "" },
+        { "type": "node", "ref": 3, "role": "stop_exit_only" }
+      ] },
+    { "type": "relation", "id": 11, "tags": { "route": "subway", "name": "Red Line (Gamma → Alpha)", "colour": "#FF4040" },
+      "members": [
+        { "type": "node", "ref": 13, "role": "stop_entry_only" },
+        { "type": "node", "ref": 12, "role": "stop" },
+        { "type": "node", "ref": 11, "role": "stop" }
+      ] },
+    { "type": "relation", "id": 20, "tags": { "route": "subway", "name": "Blue Line (Beta → Delta)", "colour": "#4169E1" },
+      "members": [
+        { "type": "node", "ref": 21, "role": "stop" },
+        { "type": "node", "ref": 22, "role": "stop" }
+      ] },
+    { "type": "relation", "id": 21, "tags": { "route": "subway", "name": "Blue Line (Delta → Beta)", "colour": "#4169E1" },
+      "members": [
+        { "type": "node", "ref": 32, "role": "stop" },
+        { "type": "node", "ref": 31, "role": "stop" }
+      ] },
+    { "type": "relation", "id": 30, "tags": { "route": "subway", "name": "Blue Line (Delta → Epsilon)", "colour": "#4169E1" },
+      "members": [
+        { "type": "node", "ref": 22, "role": "stop" },
+        { "type": "node", "ref": 41, "role": "stop" }
+      ] },
+    { "type": "relation", "id": 40, "tags": { "route": "subway", "name": "Airport Line: Zeta Terminal → Alpha", "colour": "gray" },
+      "members": [
+        { "type": "node", "ref": 51, "role": "stop" },
+        { "type": "node", "ref": 52, "role": "stop" },
+        { "type": "node", "ref": 53, "role": "stop" }
+      ] },
+    { "type": "relation", "id": 41, "tags": { "route": "subway", "name": "Airport Line: Alpha → Zeta Terminal", "colour": "gray" },
+      "members": [
+        { "type": "node", "ref": 53, "role": "stop" },
+        { "type": "node", "ref": 62, "role": "stop" },
+        { "type": "node", "ref": 51, "role": "stop" }
+      ] },
+
+    { "type": "node", "id": 1,  "lat": 28.6000, "lon": 77.2000, "tags": { "name": "Alpha" } },
+    { "type": "node", "id": 11, "lat": 28.6001, "lon": 77.2000, "tags": { "name": "Alpha" } },
+    { "type": "node", "id": 2,  "lat": 28.6100, "lon": 77.2000, "tags": { "name": "Beta (Red Line)" } },
+    { "type": "node", "id": 12, "lat": 28.6101, "lon": 77.2000, "tags": { "name": "Beta (Red Line)" } },
+    { "type": "node", "id": 3,  "lat": 28.6200, "lon": 77.2000, "tags": { "name": "Gamma" } },
+    { "type": "node", "id": 13, "lat": 28.6201, "lon": 77.2000, "tags": { "name": "Gamma" } },
+    { "type": "node", "id": 21, "lat": 28.6100, "lon": 77.2002, "tags": { "name": "Beta (Blue Line)" } },
+    { "type": "node", "id": 31, "lat": 28.6101, "lon": 77.2002, "tags": { "name": "Beta" } },
+    { "type": "node", "id": 22, "lat": 28.6100, "lon": 77.2100, "tags": { "name": "Delta Metro Station" } },
+    { "type": "node", "id": 32, "lat": 28.6101, "lon": 77.2100, "tags": { "name": "Delta" } },
+    { "type": "node", "id": 41, "lat": 28.6100, "lon": 77.2200, "tags": { "name": "Epsilon" } },
+    { "type": "node", "id": 51, "lat": 28.6205, "lon": 77.2005, "tags": { "name": "Zeta Terminal" } },
+    { "type": "node", "id": 52, "lat": 28.6300, "lon": 77.2100, "tags": { "name": "Omega" } },
+    { "type": "node", "id": 62, "lat": 28.6301, "lon": 77.2100, "tags": { "name": "Omega Stn" } },
+    { "type": "node", "id": 53, "lat": 28.6500, "lon": 77.2500, "tags": { "name": "Alpha" } },
+    { "type": "node", "id": 901, "lat": 28.6000, "lon": 77.2001, "tags": { "name": "Alpha platform" } }
+  ]
+}

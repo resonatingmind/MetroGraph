@@ -11,6 +11,10 @@ Graph Graph::from_network(const Network& network) {
     for (const Segment& s : network.segments()) {
         graph.add_edge(s.from, s.to, s.seconds, s.line);
     }
+    for (const Walkway& w : network.walkways()) {
+        graph.add_edge(w.a, w.b, w.seconds, kWalkway);
+        graph.add_edge(w.b, w.a, w.seconds, kWalkway);
+    }
     return graph;
 }
 
